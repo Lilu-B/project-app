@@ -1,7 +1,7 @@
 
 // import React from 'react';  /* in tsconfig.json -->  "jsx": "react-jsx",    */
 import { useEffect, useState } from 'react';
-import { app, addMessage, fetchMessages, analytics } from '../firebase/firebase';
+import { app, addMessage, fetchMessages, } from '../firebase/firebase';
 
 const App: React.FC = () => {
   const [messages, setMessages] = useState<{ id: string; text: string }[]>([]);
@@ -9,7 +9,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const loadMessages = async () => {
-      const data = await fetchMessages(); // Получаем сообщения
+      const data = await fetchMessages();
       setMessages(data);
     };
 
